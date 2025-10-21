@@ -53,3 +53,5 @@ All model checkpoints are stored inside the **`ViT_Checkpoints/`** folder in the
 This repository and all associated materials are the intellectual property of **the authors**.  
 The contents are provided **for academic and research reference only**.  
 Copying, redistributing, reproducing, or using the files, models, or code in part or in whole **without prior written permission** from the author is strictly prohibited.
+
+---
