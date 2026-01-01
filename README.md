@@ -29,9 +29,9 @@ The model leverages a **temporal Vision Transformer (ViT)** architecture combine
 
 | Filename | Description |
 |-----------|-------------|
-| **temporal_vit_arch_spatial_stratified_vali_top2_per_class_weighted_recapital_duplicated.ipynb** | Main program file for the baseline model used in this study. Includes dataset handling, model implementation, validation, visualization of predictions, and spatial distribution of model accuracy across census block groups. |
-| **temporal_vit_arch_spatial_stratified_vali_top2_per_class_weighted_recapital_duplicated_no_socio_data.ipynb** | Ablation study removing the **demographic data component** to evaluate its contribution. |
-| **temporal_vit_arch_spatial_stratified_vali_top2_per_class_weighted_recapital_duplicated_no_temp_features.ipynb** | Ablation study removing the **temporal image features** component to assess its effect. |
+| **baseline_model.ipynb** | Main program file for the baseline model used in this study. Includes dataset handling, model implementation, validation, visualization of predictions, and spatial distribution of model accuracy across census block groups. |
+| **ablated_demographiccomponent_model.ipynb** | Ablation study removing the **demographic data component** to evaluate its contribution. |
+| **ablated_temporal_features_model.ipynb** | Ablation study removing the **temporal image features** component to assess its effect. |
 | **utils.ipynb** | Contains helper scripts and utility functions used throughout the study for data preprocessing, metric computation, and visualization. |
 
 ---
@@ -42,9 +42,9 @@ All model checkpoints are stored inside the **`ViT_Checkpoints/`** folder in the
 
 | Filename | Description |
 |-----------|-------------|
-| **temporal_vit_spatial_stratified_vali_top2_per_weighted_class_loss_v21_epoch_30.pth** | Baseline model checkpoint after 30 epochs. |
-| **temporal_vit_spatial_stratified_vali_top2_per_weighted_class_loss_no_socio_v21_epoch_30.pth** | Ablated model checkpoint without the demographic data component (30 epochs). |
-| **temporal_vit_spatial_stratified_vali_top2_per_weighted_class_loss_no_temp_features_v21_epoch_30.pth** | Ablated model checkpoint without the temporal image features component (30 epochs). |
+| **baseline_model_epoch_30.pth.pth** | Baseline model checkpoint after 30 epochs. |
+| **ablated_demographic_model_epoch_30.pth** | Ablated model checkpoint without the demographic data component (30 epochs). |
+| **ablated_temporal_features_model_epoch_30.pth** | Ablated model checkpoint without the temporal image features component (30 epochs). |
 
 ---
 
