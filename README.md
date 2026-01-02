@@ -48,6 +48,148 @@ All model checkpoints are stored inside the **`ViT_Checkpoints/`** folder in the
 
 ---
 
+## 📊 Data
+
+### 1. Street View Images
+
+Street View images were collected following a hierarchical directory structure:
+
+`Streetview_data/<Census Block Group>/<Latitude_Longitude_Direction>/<Month Year.png>`
+
+
+The algorithm used to allocate random point locations and retrieve street view images is described in the manuscript.  
+A detailed workflow for image sampling and acquisition is presented in the following reference:
+
+- https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1000&context=iguide
+
+---
+
+### 2. `labels.xlsx`
+
+An Excel file that links the following attributes:
+
+- Census Block Group  
+- Latitude  
+- Longitude  
+- Direction  
+- Temporal years  
+- Urban retrofitting category  
+- Population density change  
+- Population density change percentage  
+
+This file serves as the primary linkage between spatial locations, temporal image pairs, labels, and demographic change indicators.
+
+---
+
+### 3. Shapefiles
+
+Boundary shapefiles were downloaded from the **U.S. Census Bureau** and used for spatial visualization and analysis across census block groups.
+
+---
+
+## 🔁 Guide to Reproduce Reported Findings
+
+### Figure 1 — Model Architecture for Urban Retrofitting Detection
+
+This figure was created using **https://draw.io**, but similar diagrams can be produced using tools such as PowerPoint, Canva, or other diagramming software.
+
+---
+
+### Figure 2 — Distribution of Street View Image Locations Across Census Block Groups (Mecklenburg County, NC)
+
+This figure was created using **ArcGIS Pro**.  
+Point features were generated using latitude and longitude values from the `labels.xlsx` file, representing the locations from which street view images were collected.
+
+---
+
+### Figure 3 — Distribution of Urban Retrofitting Categories and Sample Image Pairs
+
+Four graduated-symbol maps were created in **ArcGIS Pro** to show the spatial distribution of different retrofitting categories across census block groups in Mecklenburg County, NC.  
+Sample street view image pairs corresponding to specific retrofitting categories were mapped and annotated using **draw.io**.
+
+- Map data source: `labels.xlsx`  
+- Image source: Street View Images folder for selected locations and time periods
+
+---
+
+### Figure 4 — Spatial Stratified Sampling for Training and Validation
+
+Open `baseline_model.ipynb` and run cells from:
+
+- `1. Installation and Setup`  
+through  
+- `8.3. Training Set Map Visualization`  
+- `8.4. Validation Set Map Visualization`
+
+---
+
+### Table 2 — Evaluation Metrics for the Validation Dataset
+
+Open `baseline_model.ipynb` and run cells from:
+
+- `2. Package and Imports`  
+through  
+- `10.1. Classification Report and Confusion Matrix`
+
+---
+
+### Figure 5 — Training and Validation Accuracy and Loss Across Epochs
+
+Open `baseline_model.ipynb` and run cells from:
+
+- `2. Package and Imports`  
+through  
+- `10.2. Training Progress Visualization`
+
+---
+
+### Figure 6 — Normalized Confusion Matrix Across Retrofitting Categories
+
+Follow the same steps described for **Table 2 — Evaluation Metrics**.
+
+---
+
+### Figure 7 — True and False Predictions Across Retrofitting Categories
+
+Open `baseline_model.ipynb` and run cells from:
+
+- `2. Package and Imports`  
+through  
+- `10.3. Prediction Visualization`
+
+---
+
+### Figure 8 — Spatial Distribution of Model Performance Across Census Block Groups
+
+Open `baseline_model.ipynb` and run cells from:
+
+- `2. Package and Imports`  
+through  
+- `11.2. Accuracy Calculation per Census Block Group`
+
+This process generates a shapefile named `latest_accuracy_per_census_block_group.shp`.
+
+
+The shapefile contains per-category and overall accuracy values for each census block group.  
+Use **ArcGIS Pro** to create graduated-symbol maps from this output.
+
+---
+
+### Table 3 — Evaluation Metrics for Ablation Studies
+
+This table can be produced by running the following notebooks and collecting classification metrics:
+
+1. `baseline_model.ipynb`  
+   - Run cells from `2. Package and Imports` to `10.1. Classification Report and Confusion Matrix`
+
+2. `ablated_demographic_component_model.ipynb`  
+   - Run cells from `2. Package and Imports` to `10.1. Classification Report and Confusion Matrix`
+
+3. `ablated_temporal_features_model.ipynb`  
+   - Run cells from `2. Package and Imports` to `10.1. Classification Report and Confusion Matrix`
+
+---
+
 ## ⚠️ License and Usage
 
 This repository and all associated materials are the intellectual property of **the authors**.  
